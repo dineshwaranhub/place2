@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>places</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #000, #555, #fff); /* Black to grey to white */
+        }
+
+        .back-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: #333;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 15px;
+            border-radius: 5px;
+            z-index: 10;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-button:hover {
+            background: #444;
+        }
+
+        header {
+            width: 100%;
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 1.5em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: relative; /* To position the About button inside */
+        }
+
+        .about-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: #555;
+            color: #fff;
+            text-decoration: none;
+            font-size: em;
+            padding: 8px 10px;
+            
+            
+            
+        }
+
+        .about-button:hover {
+            background: #666;
+        }
+
+        footer {
+            width: 100%;
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 0.9em;
+            margin-top: auto;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(6, 200px); /* 6 cards in the first row */
+            gap: 20px;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .card-container div:nth-child(n+7) {
+            grid-column: span 1 / auto; /* Automatically flows to the next row */
+        }
+
+        .card {
+            position: relative;
+            width: 200px;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #222; /* Dark grey */
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(80%); /* Reduced saturation for monochrome theme */
+            transition: filter 0.3s ease;
+        }
+
+        .card:hover img {
+            filter: grayscale(40%); /* Slightly more color on hover */
+        }
+
+        .card h4 {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff; /* White for contrast */
+            font-size: 1.2em;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            text-align: center;
+            margin: 0;
+        }
+
+        .card:hover h4 {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Mahals AND Mandapam List
+        <a href="about.html" class="about-button">About</a> <!-- About button added -->
+    </header>
+    <a href="javascript:history.back()" class="back-button">Back</a>
+    <div class="card-container">
+        <!-- Top row with 6 cards -->
+        <div class="card">
+            <a href="krishna mahal.html"><img src="krishns.jpg" alt="Spring"></a>
+            <h4>KRISHNA MAHAL</h4>
+        </div>
+        <div class="card">
+            <a href="mlr.html"><img src="mlr.jpg" alt="Wedding"></a>
+            <h4>M L R MAHAL</h4>
+        </div>
+        <div class="card">
+            <a href="sri mani.html"><img src="mani.jpg" alt="ValaiKappu"></a>
+            <h4>SRI MANI MAHAL</h4>
+        </div>
+        <div class="card">
+            <a href="srinivasa.html"><img src="srini.jpg" alt="Kathukuthu"></a>
+            <h4>SRINIVASA MAHAL</h4>
+        </div>
+        <div class="card">
+            <a href="ganeshmahal.html"><img src="ganesh.jpg" alt="Majal"></a>
+            <h4>GANESH MAHAL</h4>
+        </div>
+        <div class="card">
+            <a href="pothigai.html"><img src="pothigai mahal.jpg" alt="Newhome"></a>
+            <h4>POTHIGAI</h4>
+        </div>
+
+        <!-- Bottom row with 7 cards -->
+        <div class="card">
+            <a href="kamatchiamman mahal.html"><img src="k amman.jpg" alt="Christmas"></a>
+            <h4>KAMATCHI AMMAN MAHAL</h4>
+        </div>
+        <div class="card">
+            <a href="karunambikamahal.html"><img src="karun.jpg" alt="Diwali"></a>
+            <h4>KARUNAMBIKA MAHAL</h4>
+        </div>
+        <div class="card">
+            <a href="chandra mahal.html"><img src="santhira.jpg" alt="NewYear"></a>
+            <h4>SRI CHANDIRA</h4>
+        </div>
+        <div class="card">
+            <a href="saravanamahal.html"><img src="saravana.jpg" alt="Easter"></a>
+            <h4>SARAVANA</h4>
+        </div>
+        <div class="card">
+            <a href="ramakrishna.html"><img src="ramakrishna.jpg" alt="Halloween"></a>
+            <h4>RAMAKRISHNAN</h4>
+        </div>
+        <div class="card">
+            <a href="a grand mahal.html"><img src="a grand mahal ac.jpg" alt="Thanksgiving"></a>
+            <h4>A GRAND MAHAL</h4>
+        </div>
+    </div>
+    <footer>© DineH catering management system</footer>
+</body>
+</html>
